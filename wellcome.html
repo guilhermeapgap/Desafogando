@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafogando</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="nomalize.css">
+    <link rel="stylesheet" href="desafogando.css">
+
+</head>
+
+<body id="body-index" onload="initTime();data();saldo();">
+    <header>   
+        <!-----------------------
+    navegação hamburquer
+        ------------------------->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark space-nav fixed-top">
+
+        <!-- Logo -->
+        <a href="index.html" class="navbar-brand">HOME</a>
+
+        <!-- Menu Hamburguer -->
+        <button class="navbar-toggler" data-toggle="collapse" 
+        data-target="#navegacao">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- navegacao -->
+        <div class="collapse navbar-collapse" id="navegacao">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="#sobre" class="nav-link text-light">SOBRE</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contato.html" class="nav-link text-light">CONTATO</a>
+                </li>
+            </ul>
+        </div>                   
+    </nav>             
+    </header>
+
+    <main class="main-config">
+        <section>
+            <div class="alinhamento-timer d-flex justify-content-sm-center jus  mb-3">
+
+                <span id="timer" >horas</span>
+
+            </div>
+
+                <div class="d-sm-flex justify-content-sm-between">
+
+                    <div>
+                         <h2>Gastou hoje?</h2><!--
+                        <input type="radio" name="chekbox" id="aba-gasto-diario" onclick="gastosim()">
+                        <label for="aba-gasto-diario">Sim</label> 
+                        <input type="radio" name="chekbox" id="chek-nao" onclick="naogasto()">
+                        <label for="check-nao">Não</label checked>    -->
+                    
+
+
+                
+
+<!-- teste -->
+<!-- Botão para acionar modal -->
+
+<input type="radio" name="chekboxspend" id="myRadioModal" value="Sim" data-toggle="modal" data-target="#ExemploModalCentralizado"> Sim
+  
+  <!-- Modal -->
+  <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="TituloModalCentralizado">Conte-me com o que você gastou hoje.</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+            <section>
+
+        
+                <div id="ajuste">
+  
+                  <p>Coloque 1 gasto por vez.</p>
+                  <input type="text" name="gasto-diario" id="gasto-diario" placeholder="com:">
+                  
+                  <input type="number" name="valor" id="valor-gasto" placeholder="valor:">
+                  
+          
+                  <input type="button" value="Enviar" onclick="enviaralertas()" id="send-valor"> 
+                  <br>
+                  
+                  <div id="show-tabela">
+                    <hr>
+                    <p name="gastos" id="gastos-tabela" size="10">
+                      <option id="show-gastos">Gastos:</option>
+                    </p> 
+                    <hr>
+          
+                    <p name="valor" id="preco" size="10">
+                      <option id="show-preços">preço: </option>
+                    </p> 
+                    <hr>
+                    
+                    <p name="soma total" id="soma-total" size="10">
+                      <option id="show-total">total :</option>
+                    </p>
+                    <hr>
+                    
+                </div>
+                <h2>Selecione a data que deseja saber com o que foi gasto.</h2>
+                  <input id="date" type="date">
+                </div>
+          
+                </section>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary">Salvar mudanças</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <input type="radio" name="chekboxspend" id="chek-nao" onclick="naogasto()">
+  <label for="check-nao">Não</label checked> 
+
+<!-- teste -->
+
+
+
+</div>
+
+  <div>
+    <h2>Recebeu hoje?</h2>
+
+
+    <!-- <input type="radio" name="chekbox" id="aba-ganha-diario" onclick="ganhosim()">
+    <label for="aba-ganho-diario">Sim</label> -->
+
+    <!-- teste -->
+<!-- Botão para acionar modal -->
+
+<input type="radio" name="chekboxwon" id="myRadioModal" value="Sim" data-toggle="modal" data-target="#ModalRecebidos"> Sim
+  
+<!-- Modal -->
+ <div class="modal fade" id="ModalRecebidos" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalCentralizado">Conte-me quais são seus ganhos de hoje.</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+          <section>
+
+      
+              <div id="ajuste">
+
+                <p>Coloque 1 item por vez.</p>
+                <input type="text" name="gasto-diario" id="gasto-diario" placeholder="com:">
+                
+                <input type="number" name="valor" id="valor-gasto" placeholder="valor:">
+                
+        
+                <input type="button" value="Enviar" onclick="enviaralertas()" id="send-valor"> 
+                <br>
+                
+                <div id="show-tabela">
+                  <hr>
+                  <p name="gastos" id="gastos-tabela" size="10">
+                    <option id="show-gastos">Ganhos:</option>
+                  </p> 
+                  <hr>
+        
+                  <p name="valor" id="preco" size="10">
+                    <option id="show-preços">Valor: </option>
+                  </p> 
+                  <hr>
+                  
+                  <p name="soma total" id="soma-total" size="10">
+                    <option id="show-total">Total :</option>
+                  </p>
+                  <hr>
+                  
+              </div>
+              <h2>Selecione a data que deseja saber com o que foi ganho.</h2>
+                <input id="date" type="date">
+              </div>
+        
+          </section>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary">Salvar mudanças</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- teste -->
+
+    <input type="radio" name="chekboxwon" id="chek-nao" onclick="naoganho()">
+    <label for="check-nao">Não</label checked>
+  </div>
+
+</div>
+
+
+            <div id="saldo-diario">
+                <h2>Saldo Disponível de: <span id="saldo-disponivel">00</span> para hoje: <span id="data-site">DATA</span></h2> 
+                <p>caso seu gasto diario for maior que seu saldo disponível, o saldos dos proximos dias seram recalculados.</p>
+            </div>
+            <div id="proximas-dividas">
+                <h2>Dividas dos proximos meses</h2>
+                <input type="month" name="mes" id="calendario-mes">    
+            </div>
+
+
+            <h2 class="d-flex justify-content-center mt-5">Dicas</h2>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Se for necessário usar o cartão de credito quanto menos parcelas melhor, más sempre dentro do saldo disponível.</li>
+                <li class="list-group-item">Importante colocar todos os gastos com valor correto e diariamente para recalcularmos suas divídas.</li>
+                <li class="list-group-item">caso todo seu salário ou mais estaja comprometido tente parcelar seu cartão.</li>
+                <li class="list-group-item">Usar cartão de crédito apenas em últimmo caso.</li>
+                <li class="list-group-item">Focar em gastar apenas no debíto.</li>
+              </ul>
+             <a href="index.html" id="icon-back"><img src="imagens/back-arrow-1767515-1502579.png" alt="back"></a>
+        </section>
+    </main>
+    <footer> Feito por Guilherme e Gabriel</footer>
+    <script src="desafogando.js"></script>
+            <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+</body>
+</html>

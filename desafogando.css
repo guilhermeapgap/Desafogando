@@ -169,7 +169,7 @@ input {
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: bg-animado-letra 10s ease infinite alternate;
-
+    height: 100%;
 }
 @keyframes bg-animado-letra {
     from{  

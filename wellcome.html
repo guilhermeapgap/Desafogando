@@ -164,13 +164,14 @@
               <div id="ajuste">
 
                 <p>Coloque 1 item por vez.</p>
-                <input type="text" name="gasto-diario" id="gasto-diario" placeholder="com:">
-                
-                <input type="number" name="valor" id="valor-gasto" placeholder="valor:">
-                
-        
-                <input type="button" value="Enviar" onclick="enviaralertas()" id="send-valor"> 
-                <br>
+                <form action="/" method="get">
+                  <input type="text" name="gastodiario" id="gasto-diario" placeholder="com:">
+                  
+                  <input type="number" name="valor" id="valor-gasto" placeholder="valor:">
+                  
+                  <input type="button" value="Enviar" onclick="enviaralertas()" id="send-valor">
+                  <br>
+                </form>
                 
                 <div id="show-tabela">
                   <hr>

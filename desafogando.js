@@ -127,15 +127,15 @@ function enviarprodutos() {
 
 
 //layout interativo
-      /*function layout(){
-          var time = new Date()
-          var hora = time.getHours()
+    //   function layout(){
+    //       var time = new Date()
+    //       var hora = time.getHours()
 
-          if(hora < 12) {
-              document.body.style.background = '#1b98e0'
-          } else if (hora >=12 && hora<18){
-              document.body.style.background = '#247ba0'
-          }else {
-              document.body.style.background = '#006494'
-          }
-      }*/
+    //       if(hora < 12) {
+    //           document.body.style.background = '#1b98e0'
+    //       } else if (hora >=12 && hora<18){
+    //           document.body.style.background = '#247ba0'
+    //       }else {
+    //           document.body.style.background = '#006494'
+    //       }
+    //   }

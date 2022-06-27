@@ -2,6 +2,13 @@
 //calculos principais
 
 // Enviando as informações para tabela
+
+btn.addEventListener('keypress', function(e) {
+    if (e.keyCode === 13) {
+        if (!btn.value) return;
+    }
+});
+
 const btn = document.querySelector('#send-valor');
     btn.addEventListener('click', function(e){
     

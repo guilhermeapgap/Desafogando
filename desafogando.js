@@ -44,7 +44,7 @@ function gastosim(){
 //abrindo a pagina index em entrar
 
 function openIndex(){
-    window.open("wellcome.html", "_self");
+    window.open("wellcome.handlebars", "_self");
 
 }
 

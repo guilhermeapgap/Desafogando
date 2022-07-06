@@ -24,6 +24,7 @@
     </div>                   
 </nav>             
 </header>
+
   <main class="main-config">
       <section>
 
@@ -44,18 +45,32 @@
         <div id="show-tabela">
           <hr>
           <p name="gastos" id="gastos-tabela" size="10">
-            <option id="show-gastos">Gastos:</option>
-            
-          </p> 
+            <div>
+            <h2>Gastos:</h2>
+            <br>
+              {{#each gastos}}
+                <p>{{this.item}}</p>
+              {{/each}}
+          </div>
+          </p>
+          
           <hr>
 
           <p name="valor" id="preco" size="10">
-            <option id="show-preços">preço: </option>
+            <div>
+            <h2>Preço:</h2>
+            <br>
+            {{#each gastos}}
+                <p>{{this.valorGasto}}</p>
+            {{/each}}
+            </div>
           </p> 
           <hr>
           
           <p name="soma total" id="soma-total" size="10">
-            <option id="show-total">total :</option>
+            <h2>Total:</h2>
+            <br>
+
           </p>
           <hr>
 
@@ -68,7 +83,4 @@
       </section>
 
     </main>
-    {{#each gastos}}
-      {{this.item}}
-    {{/each}}
-    <footer> Feito por Guilherme e Gabriel</footer>
+<footer> Feito por Guilherme e Gabriel</footer>

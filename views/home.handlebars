@@ -64,8 +64,8 @@
 
 <!-- teste -->
 <!-- Botão para acionar modal -->
-
-<input type="radio" name="chekboxspend" id="myRadioModal" value="Sim" data-toggle="modal" data-target="#ExemploModalCentralizado"> Sim
+<a href="/gastos"><input type="radio" name="" id=""> SIM</a>
+{{!-- <input type="radio" name="chekboxspend" id="myRadioModal" value="Sim" data-toggle="modal" data-target="#ExemploModalCentralizado"> Sim --}}
   
   <!-- Modal -->
   <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
@@ -101,7 +101,11 @@
 
                       {{#each gastos}}
                         <div>
-                          {{this.valorGasto}}
+                          #{{this.id}} - 
+                            <span class="bold">
+                              <a href="/{{this.id}}">*{{this.item}}*</a>
+                            </span> 
+                          - {{this.valorGasto}} páginas
                         </div>
                       {{/each}}
 

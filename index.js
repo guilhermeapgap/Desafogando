@@ -12,8 +12,6 @@ app.use(
 
 app.use(express.json())//pegando o body em json
 
-
-
 app.engine('handlebars', exphbs.engine())
 app.set('view engine','handlebars')//template engine
 
@@ -41,6 +39,11 @@ app.get('/home', (req, res) => {
     res.render('home')
 })
 
+//gato diario
+app.get('/gastos', (req, res) => {
+    res.render('gastos')
+})
+
 //contatos
 app.get('/contato', (req, res) => {
     res.render('contato')
@@ -50,10 +53,16 @@ app.get('/contato', (req, res) => {
 app.get('/sobre', (req, res) => {
     res.render('intro')
 })
+
+//teste
+app.get('/teste', (req, res) => {
+    res.render('teste')
+})
+
 //-------fim das rotas-----------
 
 
-
+//INSERINDO DADOS
 app.post('/gastos/insertgastos', (req,res)=>{
 
     const valorGasto = req.body.valorGasto
@@ -66,9 +75,8 @@ app.post('/gastos/insertgastos', (req,res)=>{
             console.log(err)
             return
         }
-        //res.redirect('/')
+        res.redirect('/gastos')
     }) //executando o codigo sql
-
 })
 
 
@@ -83,15 +91,36 @@ app.get('/home', (req, res) => {
         }
 
         const gastos = data
-
+        
         console.log(gastos)
 
         res.render('home', {gastos})
     })
 })
 
+//teste
+//resgatento os dados
+app.get('/teste', (req, res) => {
+    const sql = "SELECT * FROM gastos"
+
+    conn.query(sql, function (err, data){
+        if(err){
+            console.log(err)
+            return
+        }
+
+        const gastos = data
+
+        console.log(gastos)
+
+        res.render('gastos', {gastos})
+    })
+})
 
 
+
+
+////
 const conn = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -111,4 +140,5 @@ conn.connect(function(err){
     app.listen(5000)
 }) //criando uma conexãos
 
+ 
 

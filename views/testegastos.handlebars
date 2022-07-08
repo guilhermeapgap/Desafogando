@@ -34,12 +34,14 @@
       <div id="ajuste">
           
         <p>Coloque 1 gasto por vez.</p>
-        <input type="text" name="gasto-diario" id="gasto-diario" placeholder="com:">
-        
-        <input type="number" name="valor" id="valor-gasto" placeholder="valor:">
-        
-
-        <input type="button" value="Enviar" onclick="enviaralertas()" id="send-valor"> 
+        <form action="/gastos/insertgastos" method="post" class="">
+        <input type="text" name="item" id="gasto-diario" placeholder="com:">
+                    
+        <input type="number" name="valorGasto" id="valor-gasto" placeholder="valor:">
+                    
+        <input type="submit" value="cadastrar" class="submit">
+        <br>
+       </form>
         <br>
         
         <div id="show-tabela">
@@ -68,10 +70,13 @@
           <hr>
           
           <p name="soma total" id="soma-total" size="10">
+            <div>
             <h2>Total:</h2>
             <br>
-
-          </p>
+            {{#each gastos}}
+                <p>{{this.total}}</p>
+            {{/each}}
+            </div>
           <hr>
 
         </div>

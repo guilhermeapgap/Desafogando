@@ -70,10 +70,12 @@ app.post('/gastos/insertgastos', (req,res)=>{
             console.log(err)
             return
         }
-        res.redirect('/')
+        res.redirect('/testegastos')
     }) //executando o codigo sql
 
 })
+
+
 
 app.get('/teste', (req, res) => {
     const sql = "SELECT * FROM gastos"
@@ -90,7 +92,8 @@ app.get('/teste', (req, res) => {
 })
 
 app.get('/testegastos', (req, res) => {
-    const sql = "SELECT * FROM gastos"
+    const sql = "SELECT * FROM gastos "
+    const somadb = `SELECT SUM (valorGasto) as total FROM gastos`
 
     conn.query(sql, function (err, data){
         if(err){
@@ -99,11 +102,31 @@ app.get('/testegastos', (req, res) => {
         }
 
         const gastos = data
+        //console.log(gastos)
+        
         res.render('testegastos', {gastos})
+        
     })
+    
 })
 
 
+
+
+//  app.get('/testegastos', (req, res) => {
+//      const somadb = `SELECT SUM (valorGasto) as total FROM gastos`
+    
+//      conn.query(somadb, function (err, data){
+//          if(err){
+//              console.log(err)
+//              return
+//          }
+
+//          const db = data
+//          res.render('testegastos', {db})
+//          console.log(somadb)
+//      })
+//  })
 
 
 const conn = mysql.createConnection({
